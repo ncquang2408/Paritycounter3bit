@@ -1,6 +1,6 @@
 # DESIGN PARITY COUNTER GENERATOR CIRCUIT 3-BIT ACCORDING TO DIGITAL IC DESIGN FLOW
 
-## INTRODUCTION
+# INTRODUCTION
   - A counter goes up to (1 or 2 bit) each time rising edge clock signal and displays on led 7 segment.
   - Be affected when one of these control signals active HIGH.
 
@@ -13,14 +13,14 @@
   -  Design Compiler
   -  ICC2 Compiler
 
-## DIGITAL IC DESIGN FLOW
-### Step 1: DESIGN SPECIFICATION
+# DIGITAL IC DESIGN FLOW
+## Step 1: DESIGN SPECIFICATION
   - Define the requirements and objectives of the circuit. 
   - Describe what the circuit is supposed to do.
 
     (Details in file: DesignSpecification.pdf)
     
-### Step 2: RTL DESIGN
+## Step 2: RTL DESIGN
   - Translate the design specifications into a high-level representation of the circuit using a hardware description language.
   - Check syntax errors.
 
@@ -29,11 +29,12 @@
 
  (Details in file: ParityGeneratorCircuit_3bit.v)
  
-### Step 3: SYNTHESIS
+## Step 3: SYNTHESIS
 
  - Convert code into a circuit.
  - Translate an abstract design into a properly implemented chip.
- - Testbench:
+
+   ### Testbench
    
  <img src="Testbench.jpg">
  
@@ -81,16 +82,16 @@ At the time 129 - 172ps:
 
  (Details in file: ParityGeneratorCircuit_3bit_testbench.v)
  
- - Design for test:
+### Design for test
 
    
-Perform scan synthesis.
+- Perform scan synthesis.
 
 
-Dictate the appropriate scan cells to insert during optimization.
+- Dictate the appropriate scan cells to insert during optimization.
 
 
-Be selected is used on all modules of design.
+- Be selected is used on all modules of design.
 
 
 
@@ -100,18 +101,21 @@ Be selected is used on all modules of design.
 
  (Details in file: ParityGeneratorCircuit_3bit_dft.v)
  
-- Timing Constraints:
+### Timing Constraint
 
 
-Ensure that a design meets the desired timing goals.
+- Ensure that a design meets the desired timing goals.
 
-Optimize the design in terms of either area or timing.
+
+- Optimize the design in terms of either area or timing.
+  
 
 (Details in file: ParityGeneratorCircuit_3bit.sdc)
 
 
 
 Design Compiler can generate numerous reports on the results of design synthesis and optimization:
+
 
 - Reports for circuit: 
 
@@ -122,17 +126,25 @@ Design Compiler can generate numerous reports on the results of design synthesis
   
 <img src="report_timing_dft.jpg">
 
-### Step 4: GATE LEVEL DESIGN
-- Emerge after doing step 3 with Design Compiler
+## Step 4: GATE LEVEL DESIGN
+
+- Emerge after finshing step 3 with Design Compiler
+  
 - A textual description of a design circuit.
+  
 - Produce the  layout of the chip.
+  
  <img src="Gatelevelnetlist.jpg">
  
 
 
-### Step 5: LAYOUT
+## Step 5: LAYOUT
+
 - Use ICC2 Compiler
+  
 - Convert the gate-level netlist into a physical layout
+  
 - DRC/LVS: Verify the physical layout against the design rules
+  
 
  <img src="Layout.jpg">
