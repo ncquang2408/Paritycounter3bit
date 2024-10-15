@@ -93,6 +93,11 @@ Dictate the appropriate scan cells to insert during optimization.
 Be selected is used on all modules of design.
 
 
+
+<img src="Circuit.jpg">
+
+
+
  (Details in file: ParityGeneratorCircuit_3bit_dft.v)
  
 - Timing Constraints:
