@@ -123,7 +123,7 @@ Design Compiler can generate numerous reports on the results of design synthesis
 <img src="report_timing_dft.jpg">
 
 ### Step 4: GATE LEVEL DESIGN
-- Emerge after doing step 3
+- Emerge after doing step 3 with Design Compiler
 - A textual description of a design circuit.
 - Produce the  layout of the chip.
  <img src="Gatelevelnetlist.jpg">
@@ -131,6 +131,7 @@ Design Compiler can generate numerous reports on the results of design synthesis
 
 
 ### Step 5: LAYOUT
+- Use ICC2 Compiler
 - Convert the gate-level netlist into a physical layout
 - DRC/LVS: Verify the physical layout against the design rules
 
