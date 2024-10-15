@@ -7,7 +7,7 @@ module ParityGeneratorCircuit_3bit_dft (CLK, EVEN, ODD, PAUSE, RESET, Q, LED_7SE
     input scan_in,scan_enable;
 	 
     // Declaring Outputs
-    output reg [2:0] Q 			= 3'b000;
+    output reg [2:0] Q 	= 3'b000;
     output reg [6:0] LED_7SEG = 7'b1111111;
     
 	 //Declaring scan chain output
@@ -18,8 +18,11 @@ module ParityGeneratorCircuit_3bit_dft (CLK, EVEN, ODD, PAUSE, RESET, Q, LED_7SE
 	
 	 
     always @(posedge CLK) begin
-		 if(scan_enable)
-			scan_data[2:0] <= {scan_data[2:0],scan_in};
+		if (scan_enable) begin
+		 // Shift data in scan mode
+         scan_data <= {scan_data[2:0], scan_in};
+         Q <= scan_data[2:0]; // Load scanned data into Q
+		end
 		 else begin
 			 if(RESET)                    // If Reset button is turned on, set Q = 0
 				Q <= 3'b000; 
@@ -47,6 +50,7 @@ module ParityGeneratorCircuit_3bit_dft (CLK, EVEN, ODD, PAUSE, RESET, Q, LED_7SE
     end
 	
 	
+	// Assign scan_out to the last bit of scan_data
 	assign scan_out = scan_data[3];
 	
 	
