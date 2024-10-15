@@ -94,7 +94,7 @@ Be selected is used on all modules of design.
 
 
 
-<img src="Circuit.jpg">
+<img src="Circuit_dft.jpg">
 
 
 
